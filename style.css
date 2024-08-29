@@ -1,0 +1,56 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+:root{
+    --but-color: antiquewhite;
+    --ereaseBut-color:  brown;
+}
+.cal{
+    position: relative;
+    top: 100px;
+    left: 600px;
+    width: 280px;
+    height: 280px;
+    background-color: darkgray; 
+    padding: 10px;
+    border-radius: 20px;
+}
+.display, .screen, .er, .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.screen, .button{
+    font-size: 20px;
+}
+.display{
+    width: 255px;
+    height: 50px;
+    gap: 2px;
+}
+.screen{
+    width: 78%;
+    height: 100%;
+    border: 3px solid black;
+    background-color: lightgrey;
+    justify-content: start;
+    padding: 5px;
+}
+.er {
+    width: 25%; height: 100%;
+    background-color: var(--ereaseBut-color);
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    gap: 2px;
+    width: 250px;
+    margin-top: 2px;
+}
+.button{
+    width: 62px;
+    height: 50px;
+    background-color: var(--but-color);
+}
