@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     currentInput = math.evaluate(currentInput).toString();
                     if(currentInput === "Infinity" || currentInput === "-Infinity" ){
                         console.log("Error");
-                        currentInput = "";
+                        currentInput = "Hello World";
                     }
                     updateScreen(currentInput);
                 } catch (error) {
