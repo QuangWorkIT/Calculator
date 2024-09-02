@@ -6,16 +6,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const themeSwitch = document.getElementById("theme-swtich");
     
     const enableDarkMode = () => {
-        document.body.classList.add("darkmode");
+        document.documentElement.classList.add("darkmode");
         localStorage.setItem("darkmode", "active");
     }
 
     const disableDarkMode = () => { 
-        document.body.classList.remove("darkmode");
+        document.documentElement.classList.remove("darkmode");
         localStorage.setItem("darkmode", null);
     }
 
     if(darkMode === "active") enableDarkMode();
+    
     themeSwitch.addEventListener("click", () => {
         darkMode = localStorage.getItem("darkmode");
         darkMode !== "active" ? enableDarkMode() : disableDarkMode();
@@ -61,6 +62,4 @@ document.addEventListener("DOMContentLoaded", function() {
         currentInput = "";
         updateScreen(currentInput);
     });
-
-    
 });

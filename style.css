@@ -1,39 +1,50 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
 :root{
-    --but-bg-color: #CAF4FF;
+    --but-bg-color: #b7ebf9;
     --ereasebut-bg-color: #FFF9D0;
-    --cal-bg:#5AB2FF;
+    --cal-bg:#dae0e47f;
     --fade: #A1C3CC; 
     --erFade:#ccc7a6;
     --text-base: black;
     --scr-border: black;
     --scr-back-bg: #fdfdfd;
-    --body-bg: white;
+    --bgimg: url("./lightglass.jpg");
 }
 .darkmode{
     --but-bg-color: #E19898;
-    --ereasebut-bg-color: #4D3C77;
-    --cal-bg:#3F1D38;
+    --ereasebut-bg-color: #6e5b9e;
+    --cal-bg:#3f1d385a;
     --fade: #B47979; 
     --erFade:#3D305F;
     --text-base: white;
     --scr-border: #CCCCCC;
     --scr-back-bg: rgb(250, 244, 244);
-    --body-bg: #191919;
+    --bgimg: url("./darkglass.jpg");
 } 
+html{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: var(--bgimg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+}
 body{
-    background-color: var(--body-bg);
     color: var(--text-base);
 }
 .cal{
     position: relative;
-    top: 200px;
-    left: 600px;
-    width: 280px;
-    height: 280px;
+    width: 320px;
+    height: 320px;
     background-color: var(--cal-bg); 
-    padding: 10px;
+    padding: 30px;
     border-radius: 20px;
+    backdrop-filter: blur(8px);
+    border-top: 2px solid rgb(255, 255, 255, 0.4);
+    border-left: 2px solid rgb(255, 255, 255, 0.4);
+
 }
 .display, .screen, .er, .button {
     display: flex;
@@ -102,6 +113,7 @@ body{
     background-color: var(--but-bg-color);
     border: 2px solid var(--scr-border);
     padding: 4px 0;
+    cursor:pointer;
     transition: 0.25s;
 }
 #theme-swtich:hover{
@@ -125,7 +137,7 @@ body{
 
 .darkmode #theme-swtich svg:last-child {
     opacity: 1;
-    right: 30px;
+    right: 35px;
 }
     
 .darkmode #theme-swtich svg:first-child{
