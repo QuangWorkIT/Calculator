@@ -2,6 +2,8 @@
 :root{
     --but-color: antiquewhite;
     --ereaseBut-color:  brown;
+    --fade: #E1D3C1; 
+    --erFade:#842121;
 }
 .cal{
     position: relative;
@@ -35,12 +37,16 @@
     justify-content: start;
     padding: 5px;
 }
-.er {
+.er{
     width: 25%; height: 100%;
     background-color: var(--ereaseBut-color);
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.1s;
+}
+.er:hover{
+    background-color: var(--erFade);
 }
 .buttons {
     display: grid;
@@ -48,9 +54,15 @@
     gap: 2px;
     width: 250px;
     margin-top: 2px;
+    cursor: pointer;
+    transition: 0.5s;
 }
 .button{
     width: 62px;
     height: 50px;
     background-color: var(--but-color);
+}
+
+.button:hover { 
+    background-color: var(--fade);
 }
