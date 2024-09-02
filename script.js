@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // to the screen when buttons clicked
     function updateScreen(value){
         screen.textContent = value;
-        if (document.body.classList.contains("darkmode")) {
+        if (document.documentElement.classList.contains("darkmode")) {
             screen.style.color = "black"; // Light text for dark mode
         }
     }
