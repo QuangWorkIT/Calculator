@@ -1,17 +1,37 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
 :root{
-    --but-color: antiquewhite;
-    --ereaseBut-color:  brown;
-    --fade: #E1D3C1; 
-    --erFade:#842121;
+    --but-bg-color: #CAF4FF;
+    --ereasebut-bg-color: #FFF9D0;
+    --cal-bg:#5AB2FF;
+    --fade: #A1C3CC; 
+    --erFade:#ccc7a6;
+    --text-base: black;
+    --scr-border: black;
+    --scr-back-bg: #fdfdfd;
+    --body-bg: white;
+}
+.darkmode{
+    --but-bg-color: #E19898;
+    --ereasebut-bg-color: #4D3C77;
+    --cal-bg:#3F1D38;
+    --fade: #B47979; 
+    --erFade:#3D305F;
+    --text-base: white;
+    --scr-border: #CCCCCC;
+    --scr-back-bg: rgb(250, 244, 244);
+    --body-bg: #191919;
+} 
+body{
+    background-color: var(--body-bg);
+    color: var(--text-base);
 }
 .cal{
     position: relative;
-    top: 100px;
+    top: 200px;
     left: 600px;
     width: 280px;
     height: 280px;
-    background-color: darkgray; 
+    background-color: var(--cal-bg); 
     padding: 10px;
     border-radius: 20px;
 }
@@ -30,16 +50,19 @@
     gap: 2px;
 }
 .screen{
+    max-width: 191.74px;
     width: 78%;
     height: 100%;
-    border: 3px solid black;
-    background-color: lightgrey;
+    border: 3px solid var(--scr-border);
+    background-color: var(--scr-back-bg);
     justify-content: start;
     padding: 5px;
+    overflow: hidden;
+    cursor: text;
 }
 .er{
     width: 25%; height: 100%;
-    background-color: var(--ereaseBut-color);
+    background-color: var(--ereasebut-bg-color);
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
@@ -55,14 +78,57 @@
     width: 250px;
     margin-top: 2px;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.25s;
 }
 .button{
     width: 62px;
     height: 50px;
-    background-color: var(--but-color);
+    background-color: var(--but-bg-color);
 }
 
 .button:hover { 
     background-color: var(--fade);
+}
+
+#theme-swtich{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -40px; 
+    left: 98px;
+    width: 30%;
+    border-radius: 30px;
+    background-color: var(--but-bg-color);
+    border: 2px solid var(--scr-border);
+    padding: 4px 0;
+    transition: 0.25s;
+}
+#theme-swtich:hover{
+    transform: scale(1.1);
+}
+#theme-swtich svg { 
+    fill: var(--text-base);
+    position: relative;
+    transition: 0.25s;
+}
+#theme-swtich svg:last-child{
+    position: inherit;
+    right:10px;
+    opacity: 0;
+} 
+#theme-swtich svg:first-child{
+    position: relative;
+    opacity: 1;
+    left: 0;
+} 
+
+.darkmode #theme-swtich svg:last-child {
+    opacity: 1;
+    right: 30px;
+}
+    
+.darkmode #theme-swtich svg:first-child{
+    opacity: 0;
+    left: -20px;
 }
