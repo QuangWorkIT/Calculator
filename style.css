@@ -39,12 +39,14 @@ body{
     width: 320px;
     height: 320px;
     background-color: var(--cal-bg); 
-    padding: 30px;
     border-radius: 20px;
     backdrop-filter: blur(8px);
     border-top: 2px solid rgb(255, 255, 255, 0.4);
     border-left: 2px solid rgb(255, 255, 255, 0.4);
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .display, .screen, .er, .button {
     display: flex;
@@ -59,10 +61,11 @@ body{
     width: 255px;
     height: 50px;
     gap: 2px;
+    justify-content: start;
 }
 .screen{
     max-width: 191.74px;
-    width: 78%;
+    width: 73.5%;
     height: 100%;
     border: 3px solid var(--scr-border);
     background-color: var(--scr-back-bg);
@@ -70,9 +73,10 @@ body{
     padding: 5px;
     overflow: hidden;
     cursor: text;
+    color: black;
 }
 .er{
-    width: 25%; height: 100%;
+    width: 23%; height: 100%;
     background-color: var(--ereasebut-bg-color);
     font-size: 30px;
     font-weight: bold;
@@ -84,9 +88,9 @@ body{
 }
 .buttons {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 24% 24% 24% 24%;
     gap: 2px;
-    width: 250px;
+    width: auto;
     margin-top: 2px;
     cursor: pointer;
     transition: 0.25s;
@@ -101,7 +105,15 @@ body{
     background-color: var(--fade);
 }
 
-#theme-swtich{
+@keyframes switchClick{
+    25% {transform: scale(0.7);}
+    75% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+.switch-click{
+    animation: switchClick 0.5s ease-in-out;
+}
+#theme-switch{
     position: absolute;
     display: flex;
     align-items: center;
@@ -114,33 +126,33 @@ body{
     border: 2px solid var(--scr-border);
     padding: 4px 0;
     cursor:pointer;
-    transition: 0.25s;
+    transition: 0.3s;
 }
-#theme-swtich:hover{
-    transform: scale(1.1);
+#theme-switch:hover{
+    transform: scale(0.9);
 }
-#theme-swtich svg { 
+#theme-switch svg { 
     fill: var(--text-base);
     position: relative;
-    transition: 0.25s;
+    transition: 0.3s;
 }
-#theme-swtich svg:last-child{
+#theme-switch svg:last-child{
     position: inherit;
     right:10px;
     opacity: 0;
 } 
-#theme-swtich svg:first-child{
+#theme-switch svg:first-child{
     position: relative;
     opacity: 1;
     left: 0;
 } 
 
-.darkmode #theme-swtich svg:last-child {
+.darkmode #theme-switch svg:last-child {
     opacity: 1;
     right: 35px;
 }
     
-.darkmode #theme-swtich svg:first-child{
+.darkmode #theme-switch svg:first-child{
     opacity: 0;
     left: -20px;
 }
